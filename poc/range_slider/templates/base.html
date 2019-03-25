@@ -1,0 +1,153 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Facebook Cards -->
+    <meta property="og:description" content="A fun project to store my learning from each book that I read"/>
+    <meta property="og:url" content=""/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Bookworm"/>
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@omkarpathak27">
+    <meta name="twitter:creator" content="Omkar Pathak">
+    <meta name="twitter:title" content= "Bookworm">
+    <meta name="twitter:description" content="A fun project to store my learning from each book that I read">
+    <meta name="twitter:creator" content="Omkar Pathak">
+    <meta name="twitter:domain" content="https://www.omkarpathak.in">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}"/>
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body style="font-family: 'Poppins', sans-serif;">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sidebarNavigation" data-sidebarClass="navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            Range Slider
+        </a>
+        <button class="navbar-toggler leftNavbarToggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    <div class="container text-center" style="margin-top: 10%;">
+        <!-- First Slider -->
+        <div class="slidecontainer">
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        </div>
+        <div id="demo">
+        </div>
+
+        <!-- Second Slider -->
+        <div class="slidecontainer">
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange2">
+        </div>
+        <div id="demo2">
+        </div>
+
+        <!-- Third Slider -->
+        <div class="slidecontainer">
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange3">
+        </div>
+        <div id="demo3">
+        </div>
+
+        <!-- Forth Slider -->
+        <div class="slidecontainer">
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange4">
+        </div>
+        <div id="demo4">
+        </div>
+
+        <!-- Fifth Slider -->
+        <div class="slidecontainer">
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange5">
+        </div>
+        <div id="demo5">
+        </div>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js" type="text/javascript"></script>
+    {% block javascript %}
+    {% endblock %}
+
+    <script>
+      $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip(); 
+      });
+
+
+        $(document).ready(function(){
+            var slider = document.getElementById("myRange");
+            var output = document.getElementById("demo");
+            output.innerHTML = slider.value; // Display the default slider value
+
+            // Update the current slider value (each time you drag the slider handle)
+            slider.oninput = function() {
+            output.innerHTML = this.value;
+            }
+        });
+
+        $(document).ready(function(){
+            var slider = document.getElementById("myRange2");
+            var output = document.getElementById("demo2");
+            output.innerHTML = slider.value; // Display the default slider value
+
+            // Update the current slider value (each time you drag the slider handle)
+            slider.oninput = function() {
+            output.innerHTML = this.value;
+            }
+        });
+
+        $(document).ready(function(){
+            var slider = document.getElementById("myRange3");
+            var output = document.getElementById("demo3");
+            output.innerHTML = slider.value; // Display the default slider value
+
+            // Update the current slider value (each time you drag the slider handle)
+            slider.oninput = function() {
+            output.innerHTML = this.value;
+            }
+        });
+
+        $(document).ready(function(){
+            var slider = document.getElementById("myRange4");
+            var output = document.getElementById("demo4");
+            output.innerHTML = slider.value; // Display the default slider value
+
+            // Update the current slider value (each time you drag the slider handle)
+            slider.oninput = function() {
+            output.innerHTML = this.value;
+            }
+        });
+
+        $(document).ready(function(){
+            var slider = document.getElementById("myRange5");
+            var output = document.getElementById("demo5");
+            output.innerHTML = slider.value; // Display the default slider value
+
+            // Update the current slider value (each time you drag the slider handle)
+            slider.oninput = function() {
+            output.innerHTML = this.value;
+            }
+        });
+    </script>
+    
+  </body>
+</html>
