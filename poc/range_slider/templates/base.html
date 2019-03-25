@@ -151,20 +151,17 @@
         });
 
         $('#submit_slider').on('click', function(){
-            var works = new Array();
-            works.push({
-                slider1: document.getElementById("myRange1").value,
-                slider2: document.getElementById("myRange2").value,
-                slider3: document.getElementById("myRange3").value,
-                slider4: document.getElementById("myRange4").value,
-                slider5: document.getElementById("myRange5").value
-            })
             $.ajax({
                 type: "GET",
                 url: "{% url 'set_trends' %}",
                 data: {
-                    "works": JSON.stringify(works)
+                    "slider1": document.getElementById("myRange").value,
+                    "slider2": document.getElementById("myRange2").value,
+                    "slider3": document.getElementById("myRange3").value,
+                    "slider4": document.getElementById("myRange4").value,
+                    "slider5": document.getElementById("myRange5").value
                 },
+                dataType : "json",
                 success: function(data) {
                     console.log("Success");
                 }

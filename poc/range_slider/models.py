@@ -10,3 +10,4 @@ class TrendTable(models.Model):
     lowest_value  = models.IntegerField()
     highest_value = models.IntegerField()
     mean_value    = models.FloatField()
+    date_added	  = models.DateTimeField(auto_now_add=True)
