@@ -17,5 +17,6 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.homepage)
+    path('', views.homepage),
+    path('set_trends/', views.set_trends, name='set_trends')
 ]

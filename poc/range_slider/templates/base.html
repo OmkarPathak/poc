@@ -75,6 +75,8 @@
         </div>
         <div id="demo5">
         </div>
+
+        <div><input type="button" id="submit_slider" class="btn btn-info" value="Submit" style="border-radius: 0px;"></div>
     </div>
 
     {% block content %}
@@ -146,6 +148,27 @@
             slider.oninput = function() {
             output.innerHTML = this.value;
             }
+        });
+
+        $('#submit_slider').on('click', function(){
+            var works = new Array();
+            works.push({
+                slider1: document.getElementById("myRange1").value,
+                slider2: document.getElementById("myRange2").value,
+                slider3: document.getElementById("myRange3").value,
+                slider4: document.getElementById("myRange4").value,
+                slider5: document.getElementById("myRange5").value
+            })
+            $.ajax({
+                type: "GET",
+                url: "{% url 'set_trends' %}",
+                data: {
+                    "works": JSON.stringify(works)
+                },
+                success: function(data) {
+                    console.log("Success");
+                }
+            });
         });
     </script>
     
