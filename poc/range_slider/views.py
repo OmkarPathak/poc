@@ -1,10 +1,11 @@
 from django.shortcuts import render
 import json
 from .models import TrendTable
+from django.contrib import messages
 
 # Create your views here.
 def homepage(request):
-    return render(request, 'base.html')
+    return render(request, 'set_trends.html')
 
 def set_trends(request):
     data = request.GET
@@ -24,4 +25,8 @@ def set_trends(request):
         mean_value=mean
     )
     trends.save()
-    return render(request, 'base.html')
+    messages.success(request, 'Entry added successfully!')
+    return render(request, 'set_trends.html')
+
+def trends(request):
+    return render(request, 'trends.html')

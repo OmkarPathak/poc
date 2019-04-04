@@ -31,54 +31,22 @@
   </head>
   <body style="font-family: 'Poppins', sans-serif;">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sidebarNavigation" data-sidebarClass="navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{% url 'homepage' %}">
             Range Slider
         </a>
         <button class="navbar-toggler leftNavbarToggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
+        <div class="navbar-collapse collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item {% if request.resolver_match.url_name == 'trends' %} active {% endif %}">
+                    <a class="nav-link" href="{% url 'trends'%}">See Trends</a>
+                </li>
+            </ul>
+        </div>
     </nav>
-
-    <div class="container text-center" style="margin-top: 10%;">
-        <!-- First Slider -->
-        <div class="slidecontainer">
-            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-        </div>
-        <div id="demo">
-        </div>
-
-        <!-- Second Slider -->
-        <div class="slidecontainer">
-            <input type="range" min="1" max="100" value="50" class="slider" id="myRange2">
-        </div>
-        <div id="demo2">
-        </div>
-
-        <!-- Third Slider -->
-        <div class="slidecontainer">
-            <input type="range" min="1" max="100" value="50" class="slider" id="myRange3">
-        </div>
-        <div id="demo3">
-        </div>
-
-        <!-- Forth Slider -->
-        <div class="slidecontainer">
-            <input type="range" min="1" max="100" value="50" class="slider" id="myRange4">
-        </div>
-        <div id="demo4">
-        </div>
-
-        <!-- Fifth Slider -->
-        <div class="slidecontainer">
-            <input type="range" min="1" max="100" value="50" class="slider" id="myRange5">
-        </div>
-        <div id="demo5">
-        </div>
-
-        <div><input type="button" id="submit_slider" class="btn btn-info" value="Submit" style="border-radius: 0px;"></div>
-    </div>
-
     {% block content %}
     {% endblock %}
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -163,7 +131,7 @@
                 },
                 dataType : "json",
                 success: function(data) {
-                    console.log("Success");
+                    alert("Success");
                 }
             });
         });

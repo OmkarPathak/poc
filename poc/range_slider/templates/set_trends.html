@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}    
+    <div class="container text-center" style="margin-top: 10%;">
+        {% include 'messages.html' %}
+
+        <!-- First Slider -->
+        <div class="slidecontainer">
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        </div>
+        <div id="demo">
+        </div>
+
+        <!-- Second Slider -->
+        <div class="slidecontainer">
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange2">
+        </div>
+        <div id="demo2">
+        </div>
+
+        <!-- Third Slider -->
+        <div class="slidecontainer">
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange3">
+        </div>
+        <div id="demo3">
+        </div>
+
+        <!-- Forth Slider -->
+        <div class="slidecontainer">
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange4">
+        </div>
+        <div id="demo4">
+        </div>
+
+        <!-- Fifth Slider -->
+        <div class="slidecontainer">
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange5">
+        </div>
+        <div id="demo5">
+        </div>
+
+        <div><input type="button" id="submit_slider" class="btn btn-info" value="Submit" style="border-radius: 0px;"></div>
+    </div>
+{% endblock %}
