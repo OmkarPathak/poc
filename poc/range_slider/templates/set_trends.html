@@ -41,3 +41,85 @@
         <div><input type="button" id="submit_slider" class="btn btn-info" value="Submit" style="border-radius: 0px;"></div>
     </div>
 {% endblock %}
+
+{% block javascript %}
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+
+
+    $(document).ready(function(){
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value; // Display the default slider value
+
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function() {
+        output.innerHTML = this.value;
+        }
+    });
+
+    $(document).ready(function(){
+        var slider = document.getElementById("myRange2");
+        var output = document.getElementById("demo2");
+        output.innerHTML = slider.value; // Display the default slider value
+
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function() {
+        output.innerHTML = this.value;
+        }
+    });
+
+    $(document).ready(function(){
+        var slider = document.getElementById("myRange3");
+        var output = document.getElementById("demo3");
+        output.innerHTML = slider.value; // Display the default slider value
+
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function() {
+        output.innerHTML = this.value;
+        }
+    });
+
+    $(document).ready(function(){
+        var slider = document.getElementById("myRange4");
+        var output = document.getElementById("demo4");
+        output.innerHTML = slider.value; // Display the default slider value
+
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function() {
+        output.innerHTML = this.value;
+        }
+    });
+
+    $(document).ready(function(){
+        var slider = document.getElementById("myRange5");
+        var output = document.getElementById("demo5");
+        output.innerHTML = slider.value; // Display the default slider value
+
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function() {
+        output.innerHTML = this.value;
+        }
+    });
+
+    $('#submit_slider').on('click', function(){
+        $.ajax({
+            type: "GET",
+            url: "{% url 'set_trends' %}",
+            data: {
+                "slider1": document.getElementById("myRange").value,
+                "slider2": document.getElementById("myRange2").value,
+                "slider3": document.getElementById("myRange3").value,
+                "slider4": document.getElementById("myRange4").value,
+                "slider5": document.getElementById("myRange5").value
+            },
+            dataType : "json",
+            success: function(data) {
+                alert("Success");
+            }
+        });
+    });
+</script>
+{% endblock %}

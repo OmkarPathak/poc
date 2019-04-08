@@ -54,88 +54,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js" type="text/javascript"></script>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     {% block javascript %}
     {% endblock %}
-
-    <script>
-      $(document).ready(function(){
-          $('[data-toggle="tooltip"]').tooltip(); 
-      });
-
-
-        $(document).ready(function(){
-            var slider = document.getElementById("myRange");
-            var output = document.getElementById("demo");
-            output.innerHTML = slider.value; // Display the default slider value
-
-            // Update the current slider value (each time you drag the slider handle)
-            slider.oninput = function() {
-            output.innerHTML = this.value;
-            }
-        });
-
-        $(document).ready(function(){
-            var slider = document.getElementById("myRange2");
-            var output = document.getElementById("demo2");
-            output.innerHTML = slider.value; // Display the default slider value
-
-            // Update the current slider value (each time you drag the slider handle)
-            slider.oninput = function() {
-            output.innerHTML = this.value;
-            }
-        });
-
-        $(document).ready(function(){
-            var slider = document.getElementById("myRange3");
-            var output = document.getElementById("demo3");
-            output.innerHTML = slider.value; // Display the default slider value
-
-            // Update the current slider value (each time you drag the slider handle)
-            slider.oninput = function() {
-            output.innerHTML = this.value;
-            }
-        });
-
-        $(document).ready(function(){
-            var slider = document.getElementById("myRange4");
-            var output = document.getElementById("demo4");
-            output.innerHTML = slider.value; // Display the default slider value
-
-            // Update the current slider value (each time you drag the slider handle)
-            slider.oninput = function() {
-            output.innerHTML = this.value;
-            }
-        });
-
-        $(document).ready(function(){
-            var slider = document.getElementById("myRange5");
-            var output = document.getElementById("demo5");
-            output.innerHTML = slider.value; // Display the default slider value
-
-            // Update the current slider value (each time you drag the slider handle)
-            slider.oninput = function() {
-            output.innerHTML = this.value;
-            }
-        });
-
-        $('#submit_slider').on('click', function(){
-            $.ajax({
-                type: "GET",
-                url: "{% url 'set_trends' %}",
-                data: {
-                    "slider1": document.getElementById("myRange").value,
-                    "slider2": document.getElementById("myRange2").value,
-                    "slider3": document.getElementById("myRange3").value,
-                    "slider4": document.getElementById("myRange4").value,
-                    "slider5": document.getElementById("myRange5").value
-                },
-                dataType : "json",
-                success: function(data) {
-                    alert("Success");
-                }
-            });
-        });
-    </script>
-    
   </body>
 </html>
