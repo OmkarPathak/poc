@@ -49,7 +49,7 @@ def trends(request):
         # fetch only mean values from all entries
         results = []
         for res in result:
-            date = int(res.date_added.strftime("%H"))
+            date = int(res.date_added.strftime("%M"))
             results.append([date, res.slider_one])
             results.append([date, res.slider_two])
             results.append([date, res.slider_three])
